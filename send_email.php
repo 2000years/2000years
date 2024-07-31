@@ -9,7 +9,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = 'sr341.edm@gmail.com';
 
     // หัวข้ออีเมล์
-    $subject = "Email from $name";
+    $subject = "New Contact Form Submission from $name";
+
+    // เนื้อหาอีเมล์
+    $email_body = "
+    <html>
+    <head>
+        <title>Contact Form Submission</title>
+    </head>
+    <body>
+        <h2>Contact Form Submission</h2>
+        <p><strong>Name:</strong> $name</p>
+        <p><strong>Email:</strong> $email</p>
+        <p><strong>Message:</strong></p>
+        <p>$message</p>
+    </body>
+    </html>
+    ";
 
     // ตั้งค่า Headers
     $headers = "MIME-Version: 1.0" . "\r\n";
@@ -18,12 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // ส่งอีเมล์
     if (mail($to, $subject, $email_body, $headers)) {
-        echo 'อีเมล์ถูกส่งเรียบร้อยแล้ว';
+        echo 'Sent successfully!';
     } else {
-        echo 'ไม่สามารถส่งอีเมล์ได้';
+        echo 'Sorry! Has something wrong.';
     }
 } else {
     echo 'Invalid request method';
 }
 ?>
-
