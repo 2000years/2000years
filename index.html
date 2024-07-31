@@ -4,10 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact SR341</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .contact-form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+        .contact-form h2 {
+            color: #5e35b1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-form label {
+            color: #674B9E;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .contact-form button {
+            background-color: #5e35b1;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #7c4dff;
+        }
+        
+    </style>
 </head>
 <body>
-    <script src="main.js"></script>
     <div class="contact-form">
         <h2>CONTACT ME</h2>
         <form action="send_email.php" method="post">
@@ -18,9 +68,10 @@
             <input type="email" id="email" name="email" required>
             
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4"  required></textarea>
-            
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <center>
             <button type="submit">SEND</button>
+            </center>
         </form>
     </div>
 </body>
