@@ -60,7 +60,7 @@
 <body>
     <div class="contact-form">
         <h2>CONTACT ME</h2>
-        <form id="contactForm" action="send_email.php" method="POST">
+        <form action="send_email.php" method="POST">
             <label for="name">Artist Name</label>
             <input type="text" id="name" name="name" required>
             
@@ -74,9 +74,5 @@
             </center>
         </form>
     </div>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-    </script>
 </body>
 </html>
